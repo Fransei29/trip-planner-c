@@ -100,20 +100,30 @@ button:hover {
 }
 
 ul {
-  list-style: none;  /* Elimina los puntos por defecto */
-  padding-left: 0;    /* Elimina el margen izquierdo */
+  list-style: none; 
+  padding-left: 0;    
 }
 
 li {
-  margin-bottom: 15px;  /* Espacio entre cada li */
-  position: relative;   /* Para poder agregar un elemento pseudo */
+  margin-bottom: 15px;  
+  position: relative;   
 }
 
 li::before {
-  content: '★';         /* Cambia el punto por otro símbolo (puedes usar cualquier símbolo) */
+  content: '★';        
   position: absolute;
-  left: -25px;          /* Mueve el símbolo a la izquierda */
+  left: -25px;          
   top: -4px;
-  color: #da2505;       /* Puedes cambiar el color del símbolo */
-  font-size: 20px;      /* Ajusta el tamaño del símbolo */
+  color: #da2505;       
+  font-size: 20px;    
+}
+
+.icons {
+  color: #680202;      
+  font-size: 27px; 
+  padding-right: 6px;
+}
+
+h2 {
+  padding-bottom: 15px;
 }

@@ -2,6 +2,9 @@
 
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPlane, faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
+
 
 const Trip = () => {
   // Estado para almacenar el nombre del nuevo viaje y la lista de viajes
@@ -49,7 +52,7 @@ const Trip = () => {
   return (
     <div className="trip-container">
       <div >
-          <h2>Trip</h2>
+       <h2><FontAwesomeIcon className="icons" icon={faPlane} /> Trips </h2>
           {/* Formulario para crear un nuevo viaje */}
           <input 
             type="text" 
@@ -66,8 +69,8 @@ const Trip = () => {
       </div>
       <div>
           {/* Lista de viajes */}
-          <ul>
-            <h2 className='title-trips'>Your Trips</h2>
+          <ul>        
+          <h2 className='title-trips'><FontAwesomeIcon className="icons" icon={faMapMarkerAlt} />  Your Trips</h2>
             {trips?.map((trip) => (
               <li key={trip._id}>{trip.name}</li>
             ))}

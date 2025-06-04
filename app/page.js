@@ -6,13 +6,15 @@ import Title from './components/Title';
 export default function Home() {
   return (
     <>
-      <div>
+    <div className="container">  
+     <div className="title-container">
         <Title/>
       </div>   
       <div className="content-container">  
           <Trip />
           <Expense />
       </div>
+    </div>
     </>
   );
 }

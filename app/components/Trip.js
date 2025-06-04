@@ -51,33 +51,32 @@ const Trip = () => {
 
   return (
     <div className="trip-container">
-      <div >
-       <h2><FontAwesomeIcon className="icons" icon={faPlane} /> Trips </h2>
-          {/* Formulario para crear un nuevo viaje */}
-          <input 
-            type="text" 
-            value={name} 
-            onChange={(e) => setName(e.target.value)} 
-            placeholder="Enter trip name"
-          />
-          <button onClick={createTrip} disabled={loading}>
-            {loading ? 'Creating...' : 'Create New Trip'}
-          </button>
+      <div className="trip-inputs">
+        <h2><FontAwesomeIcon className="icons" icon={faPlane} /> Trips</h2>
+        <input 
+          type="text" 
+          value={name} 
+          onChange={(e) => setName(e.target.value)} 
+          placeholder="Enter trip name"
+        />
+        <button onClick={createTrip} disabled={loading}>
+          {loading ? 'Creating...' : 'Create New Trip'}
+        </button>
 
-          {/* Mostrar errores si hay */}
-          {error && <p style={{ color: 'red' }}>{error}</p>}
+        {error && <p style={{ color: 'red', marginTop: '0.5rem' }}>{error}</p>}
       </div>
-      <div>
-          {/* Lista de viajes */}
-          <ul>        
-          <h2 className='title-trips'><FontAwesomeIcon className="icons" icon={faMapMarkerAlt} />  Your Trips</h2>
-            {trips?.map((trip) => (
-              <li key={trip._id}>{trip.name}</li>
-            ))}
-          </ul>
+
+      <div className="trip-list">
+        <h2 className='title-trips'><FontAwesomeIcon className="icons" icon={faMapMarkerAlt} /> Your Trips</h2>
+        <ul>
+          {trips?.map((trip) => (
+            <li key={trip._id}>{trip.name}</li>
+          ))}
+        </ul>
       </div>
     </div>
   );
 };
 
 export default Trip;
+
